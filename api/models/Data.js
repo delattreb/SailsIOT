@@ -19,7 +19,8 @@ module.exports = {
 
         date: {
             type: 'string',
-            columnType: 'datetime'
+            columnType: 'datetime',
+            required: true,
         },
 
         device: {
