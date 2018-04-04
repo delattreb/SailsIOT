@@ -9,16 +9,16 @@
     "@sailshq/lodash": "^3.10.3",
     "@sailshq/socket.io-redis": "^5.2.0",
     "async": "2.0.1",
-    "grunt": "1.0.1",
+    "grunt": "^1.0.1",
     "sails": "^1.0.0",
-    "sails-hook-autoreload": "^1.1.0",
     "sails-hook-grunt": "^3.0.2",
     "sails-hook-orm": "^2.0.0-16",
     "sails-hook-sockets": "^1.4.0",
     "sails-mysql": "^1.0.0"
   },
   "devDependencies": {
-    "@sailshq/eslint": "^4.19.3"
+    "@sailshq/eslint": "^4.19.3",
+    "grunt-forever": "^0.4.7"
   },
   "scripts": {
     "start": "node app.js",

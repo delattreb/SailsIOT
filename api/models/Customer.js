@@ -5,7 +5,6 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-//TODO test Many to Many
 //TODO Add serializer
 //TODO Generate documentation
 
