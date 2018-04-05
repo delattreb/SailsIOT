@@ -1,5 +1,5 @@
 module.exports = function (req, res, next) {
-    let whitelist = ["www.linkt.com"]; // Add values if needed
+    let whitelist = ["127.0.0.1", "www.linkt.com"]; // Add values if needed
 
     if (whitelist.includes(req.host)) {
         next();

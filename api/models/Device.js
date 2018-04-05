@@ -15,6 +15,7 @@ module.exports = {
 
         description: {
             type: 'string',
+            allowNull: true,
         },
 
         customer: {

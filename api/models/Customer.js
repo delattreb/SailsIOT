@@ -19,10 +19,13 @@ module.exports = {
             //isIn: ['boring', 'too many emails', 'recipes too difficult', 'other'],
             //enum: ['mobile', 'work', 'home', 'skype', 'email'],
             //allowNull: true
+            //minLength: 6,
+            //protected: true,
         },
 
         description: {
             type: 'string',
+            allowNull: true,
         },
 
         devices: {
