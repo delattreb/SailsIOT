@@ -28,6 +28,10 @@ module.exports = {
             required: true,
             columnName: 'iddevice',
         }
+    }, customToJSON: function () {
+        // Return a shallow copy of this record with the password and ssn removed.
+        //return _.omit(this, ['temperature', 'humidity'])
+        return _.omit(this, ['device', 'createdAt', 'updatedAt'])
     }
 };
 

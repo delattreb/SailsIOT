@@ -5,9 +5,6 @@
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
-//TODO Add serializer
-//TODO Generate documentation
-
 module.exports = {
     attributes: {
         name: {

@@ -4,6 +4,7 @@
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
+var bcrypt = require('bcrypt');
 
 module.exports = {
     attributes: {
@@ -23,6 +24,16 @@ module.exports = {
             isEmail: true,
         },
 
+        description: {
+            type: 'string',
+            allowNull: true,
+        },
+
+        customers: {
+            collection: 'customer',
+            via: 'users'
+        },
+
         password: {
             type: 'string',
             required: true,
@@ -34,16 +45,6 @@ module.exports = {
                 // • contain at least one letter
                 return _.isString(value) && value.length >= 8 && value.match(/[a-z]/i) && value.match(/[0-9]/);
             }
-        },
-
-        description: {
-            type: 'string',
-            allowNull: true,
-        },
-
-        customers: {
-            collection: 'customer',
-            via: 'users'
         }
     }
 };
