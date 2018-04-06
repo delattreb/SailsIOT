@@ -5,6 +5,8 @@
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
 
+var bcrypt = require('bcrypt');
+
 module.exports = {
     processSignup: async function (req, res) {
         // Get parameters
@@ -36,11 +38,19 @@ module.exports = {
         let ppassword = req.param('password');
 
         // Check if User already exists
-        let user = await User.findOne({email: pemail, password: ppassword});
+        let user = await User.findOne({email: pemail});
+
         if (!user) {
-            return res.status(400).json('Bad login/password ');
+            return res.status(400).json('User not exists');
         } else {
-            res.status(200).json('login !');
+            bcrypt.compare(ppassword, user.password, function (err, match) {
+                if (err) return res.status(400).json(err);
+                if (match) {
+                    return res.status(200).json('Login !');
+                } else {
+                    return res.status(400).json('Bad login/password');
+                }
+            })
         }
     }
 };
